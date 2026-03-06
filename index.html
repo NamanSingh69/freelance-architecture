@@ -1,13 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>stock-return-architecture</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Architecture Showcase</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      padding: 40px;
+      background: #1e293b;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      border: 1px solid #334155;
+      margin: 40px 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #38bdf8;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      background-color: #0ea5e9;
+      color: #fff;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      text-align: left;
+      background: #0f172a;
+      padding: 25px;
+      border-radius: 8px;
+      border-top: 4px solid #38bdf8;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+      color: #7dd3fc;
+      margin-top: 0;
+      font-size: 1.3rem;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 10px;
+    }
+
+    .card p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .mermaid-container {
+      margin-top: 40px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+  </style>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <span class="badge">PROPRIETARY PROJECT</span>
+    <h1>Freelance AI Agent Architecture</h1>
+    <p class="subtitle">This is a showcase of the high-level architecture for the Freelance Agent platform, part of the
+      <strong>"Exclude" Strategy</strong>.</p>
+    <p class="subtitle" style="font-size: 0.9rem; color: #64748b;">Source code and internal implementation details
+      remain strictly private.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>1. Dynamic Routing Engine</h3>
+        <p>The core router utilizes Gemini 3.1 Pro to classify incoming freelance task descriptions (e.g., "build a
+          react app", "write a python script") into discrete executable sub-tasks. It dispatches these to specialized
+          sub-agents based on their contextual capabilities.</p>
+      </div>
+      <div class="card">
+        <h3>2. Stateful Persistence</h3>
+        <p>Prolonged multi-agent collaborations are persisted using a Redis/PostgreSQL state management system. Every
+          agent's scratchpad, thought process, and output diff is logged atomically to prevent context window collapse
+          over long time horizons.</p>
+      </div>
+      <div class="card">
+        <h3>3. Zero-Trust Sandboxing</h3>
+        <p>Before any generated code is returned to the user, an isolated Docker sandbox compiles, lints, and executes
+          the output against a battery of generated unit tests. Only passing artifacts are allowed through the gateway.
+        </p>
+      </div>
+      <div class="card">
+        <h3>4. API Gateway</h3>
+        <p>External requests are throttled and authenticated via a GraphQL API gateway. It enforces strict rate
+          limiting, handles edge caching for static retrieval queries, and manages API keys / JWT session tokens.</p>
+      </div>
+    </div>
+
+    <div class="mermaid-container">
+      <div class="mermaid">
+        graph TD
+        A[Client Request] --> B[API Gateway / Auth]
+        B --> C{Task Router Agent}
+        C -->|Frontend Scope| D[React/Vite Sub-Agent]
+        C -->|Backend Scope| E[Python/FastAPI Sub-Agent]
+        C -->|DevOps Scope| F[IaC Sub-Agent]
+        D --> G[(Unified Redis Context)]
+        E --> G
+        F --> G
+        G --> H(Verification Sandbox Docker)
+        H -->|Pass Tests| I{Client Delivery Notification}
+        H -->|Fail Tests| C
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
