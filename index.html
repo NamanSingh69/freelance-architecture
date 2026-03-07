@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freelance Architecture Showcase</title>
+  <title>AutoReport Generation System Showcase</title>
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -104,53 +104,64 @@
 
 <body>
   <div class="container">
-    <span class="badge">PROPRIETARY PROJECT</span>
-    <h1>Freelance AI Agent Architecture</h1>
-    <p class="subtitle">This is a showcase of the high-level architecture for the Freelance Agent platform, part of the
-      <strong>"Exclude" Strategy</strong>.</p>
-    <p class="subtitle" style="font-size: 0.9rem; color: #64748b;">Source code and internal implementation details
-      remain strictly private.</p>
+    <span class="badge">FREELANCE CLIENT PROJECT</span>
+    <h1>AutoReport Generation System</h1>
+    <div
+      style="background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: 20px; border-radius: 4px; text-align: left; margin-bottom: 30px;">
+      <h3 style="color: #38bdf8; margin-top: 0; font-size: 1.2rem;">Full-Stack Development Internship Portfolio</h3>
+      <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.6; margin-bottom: 10px;">
+        <strong>Client:</strong> Mr. Rajat Gupta (Industry Professional)<br>
+        <strong>The Mission:</strong> Automate a complex, manual motor insurance reporting workflow using generative
+        AI.<br>
+        <strong>Core Tech Stack:</strong> Python (Flask) | Google Gemini AI | JavaScript
+      </p>
+      <div style="display: flex; gap: 15px; margin-top: 15px;">
+        <span
+          style="background: #10b981; color: #fff; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">🚀
+          90% Speed Improvement</span>
+        <span
+          style="background: #3b82f6; color: #fff; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">📈
+          20% Client Capacity Increase</span>
+      </div>
+    </div>
 
     <div class="grid">
       <div class="card">
-        <h3>1. Dynamic Routing Engine</h3>
-        <p>The core router utilizes Gemini 3.1 Pro to classify incoming freelance task descriptions (e.g., "build a
-          react app", "write a python script") into discrete executable sub-tasks. It dispatches these to specialized
-          sub-agents based on their contextual capabilities.</p>
+        <h3>1. Multi-Modal PDF Ingestion</h3>
+        <p>A secure Python Flask backend accepts complex, unstructured PDF documents containing Registration
+          Certificates, Driving Licenses, Policies, Claim Forms, and Repair Invoices.</p>
       </div>
       <div class="card">
-        <h3>2. Stateful Persistence</h3>
-        <p>Prolonged multi-agent collaborations are persisted using a Redis/PostgreSQL state management system. Every
-          agent's scratchpad, thought process, and output diff is logged atomically to prevent context window collapse
-          over long time horizons.</p>
+        <h3>2. Gemini AI Extraction Engine</h3>
+        <p>Leverages Google Generative AI (Gemini 2.5 Pro / 3 Flash) with multi-shot prompts to perform highly accurate
+          optical character recognition and semantic extraction, normalizing non-standard insurance terminology into
+          strict JSON payloads.</p>
       </div>
       <div class="card">
-        <h3>3. Zero-Trust Sandboxing</h3>
-        <p>Before any generated code is returned to the user, an isolated Docker sandbox compiles, lints, and executes
-          the output against a battery of generated unit tests. Only passing artifacts are allowed through the gateway.
-        </p>
+        <h3>3. Dynamic Report Synthesis</h3>
+        <p>Parsed JSON payloads are pipelined into Python's `FPDF` engine to dynamically generate Motor Final Survey
+          Reports and Repair Assessment Summaries, including comprehensive part-level cost calculations and GST
+          estimations.</p>
       </div>
       <div class="card">
-        <h3>4. API Gateway</h3>
-        <p>External requests are throttled and authenticated via a GraphQL API gateway. It enforces strict rate
-          limiting, handles edge caching for static retrieval queries, and manages API keys / JWT session tokens.</p>
+        <h3>4. Google Drive OAuth Sync</h3>
+        <p>Integrates a fully authenticated Google OAuth2 flow, allowing the backend to autonomously push completed,
+          sanitized PDF reports directly into the client's cloud storage over securely authenticated resumable upload
+          sessions.</p>
       </div>
     </div>
 
     <div class="mermaid-container">
       <div class="mermaid">
-        graph TD
-        A[Client Request] --> B[API Gateway / Auth]
-        B --> C{Task Router Agent}
-        C -->|Frontend Scope| D[React/Vite Sub-Agent]
-        C -->|Backend Scope| E[Python/FastAPI Sub-Agent]
-        C -->|DevOps Scope| F[IaC Sub-Agent]
-        D --> G[(Unified Redis Context)]
-        E --> G
-        F --> G
-        G --> H(Verification Sandbox Docker)
-        H -->|Pass Tests| I{Client Delivery Notification}
-        H -->|Fail Tests| C
+        flowchart TD
+        A[Client Browser JS] -->|Upload Raw PDFs| B[Flask API Gateway]
+        B --> C{API Rate Limiter & Auth}
+        C --> D[PDF Processing Layer]
+        D -->|Prompt + Context| E((Google Gemini AI))
+        E -->|Strict JSON Payload| F[Data Normalization]
+        F --> G[FPDF Generator]
+        G -->|Final Survey PDF| H[Google Auth Callback]
+        H -->|Drive API V3| I[(Client Google Drive)]
       </div>
     </div>
   </div>
