@@ -146,7 +146,7 @@ export default function App() {
                                 </div>
                                 <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800">
                                     <div className="text-blue-400 text-xs font-bold uppercase mb-1">Sync Server</div>
-                                    <div className="text-white font-medium">Node.js + Supabase API</div>
+                                    <div className="text-white font-medium">Node.js + Drive API</div>
                                 </div>
                             </div>
 
@@ -196,7 +196,7 @@ export default function App() {
 
                                     <div className="flex flex-col items-center text-center p-4 bg-blue-900/20 rounded-xl border border-blue-500/30 w-full lg:w-1/5 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
                                         <Database className="w-8 h-8 text-blue-400 mb-3" />
-                                        <div className="text-sm font-bold text-white mb-1">Supabase Storage</div>
+                                        <div className="text-sm font-bold text-white mb-1">Google Drive</div>
                                         <div className="text-xs text-slate-500">Cloud Persistence</div>
                                     </div>
 
