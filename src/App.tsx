@@ -1,4 +1,5 @@
 import { Briefcase, FileText, Database, Server, Smartphone, Camera, ArrowRight, UploadCloud, MapPin, HardDrive, RefreshCw, Zap } from 'lucide-react';
+import { InsuranceCaseStudy } from './components/InsuranceCaseStudy';
 
 export default function App() {
     return (
@@ -29,6 +30,9 @@ export default function App() {
                 <div className="w-full mb-16 min-h-[400px]">
                     <div className="space-y-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
                         
+                        {/* New Hero & Case Study UI */}
+                        <InsuranceCaseStudy />
+
                         {/* System 1: Insurance AI */}
                         <div className="glass-card p-8 md:p-12 relative overflow-hidden border-violet-500/30 bg-slate-900/80 rounded-3xl group transition-all hover:border-violet-500/50 hover:shadow-[0_0_40px_rgba(139,92,246,0.1)]">
                             <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-violet-500 to-transparent opacity-50" />
